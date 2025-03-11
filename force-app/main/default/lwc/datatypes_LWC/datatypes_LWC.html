@@ -1,0 +1,20 @@
+<template>
+    Your Name : {name} <br/>
+    Your Salary : {salary} <br/>
+    Your EmpId : {empId} <br/>
+
+    <br/> <br/>
+    ***** Find Greater of 3 Numbers ******
+    <lightning-card title="Calculator: Greater Number" icon-name="utility:budget_period">
+
+        <lightning-input label="Enter First Number" onchange={firstNum}></lightning-input>
+
+        <lightning-input label="Enter Second Number" onchange={secondNum}></lightning-input>
+
+        <lightning-input label="Enter Third Number" onchange={thirdNum}></lightning-input>
+
+        <lightning-button label="Calculate" variant="brand" icon-name="utility:budget_period" onclick={calculateGreater}></lightning-button>
+ 
+    </lightning-card>
+
+</template>

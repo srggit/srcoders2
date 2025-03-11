@@ -1,0 +1,26 @@
+<apex:page controller="Parent_Child_Query">
+    <apex:form >
+    	<apex:pageBlock tabStyle="Account" title="Accounts">
+        	<apex:pageBlockTable value="{! lstAccounts}" var="a">
+                <apex:column value="{! a.Name}"/>
+                <apex:column value="{! a.Rating}"/>
+                <apex:column value="{! a.Industry}"/>
+                
+                <apex:column headerValue="Contacts">
+                	<apex:dataTable value="{! a.contacts}" var="c">
+                    	<apex:column value="{! c.FirstName}" />
+                        <apex:column value="{! c.LastName}" />
+                    </apex:dataTable>
+                </apex:column>
+                
+                <apex:column headerValue="Opportunities">
+                    <apex:dataTable value="{! a.Opportunities}" var="o">
+                    	<apex:column value="{! o.Name}"/>
+                        <apex:column value="{! o.StageName}"/>
+                        <apex:column value="{! o.Amount}"/>
+                    </apex:dataTable>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

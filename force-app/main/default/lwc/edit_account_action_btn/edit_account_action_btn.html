@@ -1,0 +1,55 @@
+<template>
+
+    <lightning-modal-header label="Edit Account"></lightning-modal-header>
+
+    <lightning-modal-body>
+        <lightning-record-edit-form 
+            record-id={recordId} 
+            object-api-name="Account" 
+            onsuccess={handleSuccess} 
+            onerror={handleError} 
+            onsubmit={handleSubmit}>
+        
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small" size="6">
+                    <lightning-input-field data-id="name" field-name="Name"></lightning-input-field>
+                    <lightning-input-field data-id="rating" field-name="Rating"></lightning-input-field>
+                    <lightning-input-field data-id="industry" field-name="Industry"></lightning-input-field>
+                    <lightning-input-field data-id="annualRevenue" field-name="AnnualRevenue"></lightning-input-field>
+                    <lightning-input-field data-id="parentAcc" field-name="ParentId"></lightning-input-field>
+                    <lightning-input-field data-id="phone" field-name="Phone"></lightning-input-field>
+                    <lightning-input-field data-id="accountNumber" field-name="AccountNumber"></lightning-input-field>                    
+                </lightning-layout-item>
+                
+                <lightning-layout-item padding="around-small" size="6">
+                    <lightning-input-field data-id="fax" field-name="Fax"></lightning-input-field>
+                    <lightning-input-field data-id="website" field-name="Website"></lightning-input-field>
+                    <lightning-input-field data-id="employees" field-name="NumberOfEmployees"></lightning-input-field>
+                    <lightning-input-field data-id="ownership" field-name="Ownership"></lightning-input-field>
+                    <lightning-input-field data-id="type" field-name="Type"></lightning-input-field>
+                    <lightning-input-field data-id="pincode" field-name="Pincode__c"></lightning-input-field>
+                    <lightning-input-field data-id="active" field-name="Active__c"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            
+            <!-- <lightning-button type="submit" label="Save" variant="brand"></lightning-button> -->
+        </lightning-record-edit-form>
+        
+    </lightning-modal-body>
+
+    <lightning-modal-footer>
+        <lightning-button label="Save"   onclick={handleSave} variant="brand"></lightning-button> &nbsp;
+        <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+    </lightning-modal-footer>
+
+    <!--
+    <lightning-modal-body> 
+        <lightning-record-form 
+            record-id={recordId} 
+            object-api-name="Account" 
+            layout-type="Compact" 
+            mode="edit">
+        </lightning-record-form> 
+    </lightning-modal-body>
+    -->
+</template>

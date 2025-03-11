@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="getRelatedListInfo - lightning/uiRelatedListApi" icon-name="custom:custom23">
+        <div class="slds-m-around_medium">
+
+            <template if:true={relatedListInfo}>
+                Cloneable: {relatedListInfo.cloneable } <br />
+                Deletable: {relatedListInfo .deletable }
+            </template>
+
+            <br /> <br />
+            Display Columns Names: <br />
+            <template if:true={displayColumns}>
+                <template for:each={displayColumns} for:item="column">
+                    <div key={column.fieldApiName}>
+                        <p> {column.fieldApiName} </p>
+                    </div>
+                </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

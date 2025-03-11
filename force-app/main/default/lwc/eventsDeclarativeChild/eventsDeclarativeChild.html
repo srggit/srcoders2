@@ -1,0 +1,23 @@
+<template>
+    <lightning-card 
+        title="Volume Control - Child"
+        icon-name="utility:volume_high">
+
+        <lightning-button 
+            label="Increase"
+            icon-name="utility:arrowup"
+            icon-position="left"
+            onclick={increaseVol}>
+        </lightning-button>
+        
+        &nbsp; &nbsp; &nbsp;
+
+        <lightning-button 
+            label="Decrease"
+            icon-name="utility:arrowdown"
+            icon-position="right"
+            onclick={decraseVol}>           
+        </lightning-button>
+
+    </lightning-card>
+</template>

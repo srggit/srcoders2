@@ -1,0 +1,45 @@
+<template>
+    <br/> <br/>
+    <p style="font-size: 25px;"> LDS (Lightning Data Service) </p>
+
+    <lightning-card title="LWC LDS Form Based">
+        <p>****** Lightning-record-view-form ******</p>
+        <lightning-record-view-form record-id={recordId} object-api-name="Account">
+            <lightning-output-field field-name="Name"></lightning-output-field>
+            <lightning-output-field field-name="Rating"></lightning-output-field>
+            <lightning-output-field field-name="Industry"></lightning-output-field>
+            <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+            <lightning-output-field field-name="Website"></lightning-output-field>
+        </lightning-record-view-form>
+    </lightning-card>
+
+    <lightning-card> 
+            <p>****** Lightning-record-edit-form ******</p>
+            <lightning-record-edit-form record-id={recordId} object-api-name="Account">
+                <lightning-input-field field-name="Name"></lightning-input-field>
+                <lightning-input-field field-name="Rating"></lightning-input-field>
+                <lightning-input-field field-name="Industry"></lightning-input-field>
+                <lightning-input-field field-name="AnnualRevenue"></lightning-input-field>
+                <lightning-input-field field-name="Website"></lightning-input-field>
+                <lightning-input-field field-name="Ownership"></lightning-input-field>
+
+            <lightning-button label="Reset" variant="brand" onclick={resetFields}></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+
+    <lightning-card>
+        <p>****** Lightning-record-form ******</p>
+        <lightning-record-form record-id={recordId} object-api-name="Account" layout-type="Compact" mode="view">
+        </lightning-record-form>
+    </lightning-card>
+
+    <lightning-card>
+        <p>****** Lightning-record-form SELECTIVE FIELDS ******</p>
+        <lightning-record-form object-api-name="Account" record-id={recordId} fields={accFields}>
+        </lightning-record-form>
+
+
+
+    </lightning-card>
+
+</template>

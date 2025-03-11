@@ -1,0 +1,18 @@
+<apex:page standardController="Account" recordSetVar="Accounts">
+    <apex:includeLightning />
+    <div id="lightning"> </div>
+    <script>
+    $Lightning.use(
+        "c:Create_Acc_Con_Opp_Application",
+        function() {
+        $Lightning.createComponent(
+            "c:create_acc_con_opp_lwc",
+            {
+            	
+            },
+            "lightning"
+        );
+    }
+    );
+    </script>
+</apex:page>

@@ -1,0 +1,30 @@
+<apex:page controller="SOQL_Example2">
+	<apex:form >
+    	<apex:pageBlock title="Search Data">
+        	<apex:pageBlockButtons location="bottom">
+            	<apex:commandButton value="Search" action="{! search}" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+                
+            	<apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Account Name" />
+                    <apex:inputText value="{! accName}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Industry" />
+                    <apex:inputText value="{! accIndustry}" />
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:dataTable value="{! accounts}" var="a" cellpadding="5" rules="row" border="frame"> 
+            <apex:column value="{! a.Name}" />
+            <apex:column value="{! a.Rating}" />
+            <apex:column value="{! a.Industry}" />
+            <apex:column value="{! a.Website}" />
+        </apex:dataTable>
+    </apex:form>
+</apex:page>

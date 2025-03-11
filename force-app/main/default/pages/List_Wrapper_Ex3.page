@@ -1,0 +1,38 @@
+<apex:page controller="List_Wrapper_Ex3">
+    <apex:form >
+    	<apex:pageBlock title="Account Contact Fields">
+            <apex:pageBlockButtons location="top"> 
+            	<apex:commandButton value="Add" action="{! addRecord}"/>
+                <apex:commandButton value="Clear" action="{! clearTable}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection title="Account Fields">
+                <apex:inputText value="{! accConObj.acc.Name}" />
+                <apex:inputText value="{! accConObj.acc.Rating}"/>
+                <apex:inputText value="{! accConObj.acc.Industry}"/>
+                <apex:inputText value="{! accConObj.acc.AnnualRevenue}"/>
+            </apex:pageBlockSection>
+        	
+            <apex:pageBlockSection title="Contact Fields">
+                <apex:inputText value="{! accConObj.con.FirstName}" />
+                <apex:inputText value="{! accConObj.con.LastName}"/>
+                <apex:inputText value="{! accConObj.con.Phone}"/>
+                <apex:inputText value="{! accConObj.con.Email}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Account Contact Table" columns="1" collapsible="true" >
+                <apex:pageBlockTable value="{! accConObjList}" var="ac" rendered="{! accConObjList.size > 0}">
+                	<apex:column value="{! ac.acc.Name}"/>
+                    <apex:column value="{! ac.acc.Rating}"/>
+                    <apex:column value="{! ac.acc.Industry}"/>
+                    <apex:column value="{! ac.acc.AnnualRevenue}"/>
+                    <apex:column value="{! ac.con.FirstName}"/>
+                    <apex:column value="{! ac.con.LastName}"/>
+                    <apex:column value="{! ac.con.Phone}"/>
+                    <apex:column value="{! ac.con.Email}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

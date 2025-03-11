@@ -1,0 +1,62 @@
+<template>
+
+    <lightning-card title="for:each Loop" icon-name="standard:loop">
+        <!-- Array Loop -->
+        <div class="slds-p-around_small">
+            <template for:each={carList} for:item="car">
+                <ul key={car} class="slds-list_vertical slds-has-dividers_around-space slds-m-around_xx-small">
+                    <li class="slds-item">
+                        <a href="#"> {car} </a>
+                    </li>
+                </ul>
+            </template>
+
+            <hr />
+            <!-- Array Object Loop-->
+            <template for:each={programmingList} for:item="lang">
+                <ul key={lang.id} class="slds-list_vertical slds-has-dividers_around-space slds-m-around_xx-small">
+                    <li class="slds-item">
+                        <a href="#"> {lang.name} </a>
+                    </li>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="iterator Loop" icon-name="standard:loop">
+        <div class="slds-p-around_small">
+            <template iterator:ceo={ceoList}>
+                <ul key={ceo.id} class="slds-list_vertical slds-has-dividers_around-space">
+                    <li class="slds-item" if:true={ceo.first} style="background: #295646;">
+                        <a href="#" style="color:white;"> List of Top Companies and their CEO's : </a>
+                    </li>
+                    <li class="slds-item">
+                        <a href="#" class="slds-item"> {ceo.value.company} : {ceo.value.name} </a>
+                    </li>
+                    <li class="slds-item" if:true={ceo.last} style="background: #295646; color:white;">
+                        <a href="#" style="color:white;"> @2024 Copyright Salesforce </a>
+                    </li>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="iterator Loop" icon-name="standard:loop">
+        <ul class="slds-p-around_small">
+
+            <div class="list-group-inline">
+                <template iterator:ceo={ceoList}>
+                    <div key={ceo.value.id}>
+                        <a href="#" if:true={ceo.first} class="list-group-item list-group-item-action header">List of Top Companies and their CEO's :</a>
+
+                        <a href="#" class="list-group-item list-group-item-action"> {ceo.value.company} : {ceo.value.name} </a>
+
+                        <a href="#" if:true={ceo.last} class="list-group-item list-group-item-action footer"> @2024 Copyright Salesforce </a>
+                    </div>
+                </template>
+            </div>
+
+        </ul>
+    </lightning-card>
+
+</template>

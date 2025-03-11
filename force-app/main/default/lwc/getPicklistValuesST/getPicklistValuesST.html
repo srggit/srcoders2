@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Ex:4 Wire - Get Picklist Values for Particular Field (RecordType)"
+        icon-name="custom:custom63">
+
+
+        <div class="slds-p-around_medium">
+            <template if:true={industryPicklistValues}>
+                <lightning-combobox name="industry" label="Industry" value={picklistValue} placeholder="Select Industry"
+                    options={industryPicklistValues} onchange={handleIndustryChange}>
+                </lightning-combobox>
+            </template>
+        </div>
+        <!--
+        <div class="slds-p-around_medium">
+            <template if:true={industryPicklistValues.data}>
+                <lightning-combobox name="industry" label="Industry" value={picklistvalue} placeholder="Select Industry"
+                    options={industryPicklistValues.data.values} onchange={handleIndustryChange}>
+                </lightning-combobox>
+            </template>
+        </div>
+        -->
+    </lightning-card>
+</template>

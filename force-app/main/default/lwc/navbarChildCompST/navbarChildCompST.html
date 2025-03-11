@@ -1,0 +1,12 @@
+<template>
+    <p> Child Component</p>
+
+    <div class="vertical-menu">
+        <template for:each={navList} for:item="list">
+            <a href="javascript:void(0);" name={list.name} key={list.id} class={list.className}
+                onclick={handleNavSelection}>
+                {list.name}
+            </a>
+        </template>
+    </div>
+</template>

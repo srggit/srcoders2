@@ -1,0 +1,17 @@
+<apex:page controller="MyController">
+    <apex:form >
+        <apex:pageBlock title="Select Object and Field">
+            <apex:pageBlockSection >
+                <apex:selectList value="{!selectedObject}" size="1" onchange="this.form.submit();">
+                    <apex:selectOptions value="{!objectOptions}"/>
+                </apex:selectList>
+
+                <apex:selectList value="{!selectedField}" size="1">
+                    <apex:selectOptions value="{!fieldOptions}"/>
+                </apex:selectList>
+
+                <apex:commandButton value="Submit" action="{!submit}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

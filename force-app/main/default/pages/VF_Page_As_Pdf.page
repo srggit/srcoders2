@@ -1,0 +1,5 @@
+<apex:page >
+    <apex:form >
+    	This is Sample VF page converted as Pdf.
+    </apex:form>
+</apex:page>

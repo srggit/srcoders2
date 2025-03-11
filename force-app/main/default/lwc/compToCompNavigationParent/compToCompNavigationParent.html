@@ -1,0 +1,18 @@
+<template>
+    
+    <lightning-card title="Component to Component Navigation - Parent" icon-name="custom:custom23">
+        <lightning-layout>
+            <lightning-layout-item size="6">  
+                <lightning-input label="User-Name" lwc:ref="userName"></lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6">
+                <lightning-button 
+                    label="Pass to Child LWC Comp" 
+                    onclick={navigateToChildLwc}
+                    variant="brand">
+                </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

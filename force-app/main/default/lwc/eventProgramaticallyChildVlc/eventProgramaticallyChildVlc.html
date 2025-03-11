@@ -1,0 +1,24 @@
+<template>
+    
+    <lightning-card 
+        title="Brightness Control - Child"
+        icon-name="custom:custom3">
+
+        <div style="margin-left: 20px">
+            <lightning-button 
+                label="Increase"
+                icon-name="utility:chevronup"
+                onclick={increaseBrightness}>
+            </lightning-button>
+            
+            &nbsp; &nbsp; &nbsp; 
+
+            <lightning-button
+                label="Decrease"
+                icon-name="utility:chevrondown"
+                onclick={decreaseBrightness}>
+            </lightning-button>
+        </div>
+        
+    </lightning-card>
+</template>

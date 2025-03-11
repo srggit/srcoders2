@@ -1,0 +1,45 @@
+<apex:page controller="SavePoint_Rollback">
+    <apex:form >
+        <apex:pageMessages />
+        
+    	<apex:pageBlock >
+        	<apex:pageBlockButtons >
+            	<apex:commandButton value="Create" action="{! saveRecords}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Company" />
+                    <apex:inputText value="{! accWrap.company}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="LastName" />
+                    <apex:inputText value="{! accWrap.lastName}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="First Name" />
+                    <apex:inputText value="{! accWrap.firstName}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Phone" />
+                    <apex:inputText value="{! accWrap.phone}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Industry" />
+                    <apex:inputText value="{! accWrap.industry}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Rating" />
+                    <apex:inputText value="{! accWrap.rating}"/>
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+      	 	     
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

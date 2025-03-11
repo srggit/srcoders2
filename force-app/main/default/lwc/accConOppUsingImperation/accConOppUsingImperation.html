@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Create Account, Contact & Opportunity" icon-name="standard:opportunity">
+        <div class="slds-p-around_medium">
+            <!-- Account Input -->
+            <lightning-input label="Account Name" onchange={handleAccountNameChange} value={accountName}></lightning-input>
+            <lightning-input label="Account Phone" onchange={handleAccountPhoneChange} value={accountPhone}></lightning-input>
+
+            <!-- Contact Input -->
+            <lightning-input label="Contact First Name" onchange={handleContactFirstNameChange} value={contactFirstName}></lightning-input>
+            <lightning-input label="Contact Last Name" onchange={handleContactLastNameChange} value={contactLastName}></lightning-input>
+            <lightning-input label="Contact Email" onchange={handleContactEmailChange} value={contactEmail}></lightning-input>
+
+            <!-- Opportunity Input -->
+            <lightning-input label="Opportunity Name" onchange={handleOpportunityNameChange} value={opportunityName}></lightning-input>
+            <lightning-input label="Opportunity Close Date" onchange={handleOpportunityCloseDateChange} value={opportunityCloseDate} type="date"></lightning-input>
+            <lightning-combobox
+                label="Opportunity Stage"
+                onchange={handleOpportunityStageChange}
+                value={opportunityStage}
+                options={stageOptions}>
+            </lightning-combobox>
+
+            <lightning-button label="Create Records" variant="brand" onclick={saveRecords}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

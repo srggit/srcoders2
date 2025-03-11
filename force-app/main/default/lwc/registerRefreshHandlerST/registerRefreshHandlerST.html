@@ -1,0 +1,20 @@
+<template>
+
+    <lightning-card title="RefreshEvent Api - Refresh Standard Page" icon-name="custom:custom34">
+        {recordId}
+        <lightning-record-edit-form object-api-name="Contact" onsuccess={handleSucccess}>
+            <div class="slds-m-around_medium">
+                <lightning-messages></lightning-messages>
+                <lightning-input-field field-name={firstName}></lightning-input-field>
+                <lightning-input-field field-name={lastName}></lightning-input-field>
+                <lightning-input-field field-name={phone}></lightning-input-field>
+                <lightning-input-field field-name={email}></lightning-input-field>
+                <lightning-input-field field-name={accId}></lightning-input-field>
+
+                <lightning-button label="Create Record" type="submit" variant="brand">
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+
+    </lightning-card>
+</template>

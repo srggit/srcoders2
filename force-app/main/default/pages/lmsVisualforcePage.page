@@ -1,0 +1,74 @@
+<apex:page >
+    <div>
+        <b> ******** LMS VISUALFORCE PAGE ******** </b> <br/> <br/>
+        <b> ***** Send Messages ***** </b>   <br/> <br/>
+        
+        <b> Enter Your Message : </b> <input type="text" id="textMessage"></input> <br/> <br/>
+
+        <button onclick="publishMC()"> Publish Message </button> <!-- Publish Message channel -->
+        <button onclick="subscribeMC()"> Subscribe </button>    <!-- UnMute -->
+        <button onclick="unSubscribeMC()"> UnSubscribe </button>    <!-- Mute -->
+    </div>
+
+    <br/> 
+    <div>
+        <b> ***** Received Messages ***** </b> <br/>
+        <label id="mcMessageText"></label>
+    </div>
+
+    <script>
+        // Load the Message Channel
+                    // Predefined_FolderName.fileName__c
+        var MC = "{!$MessageChannel.mediator__c}";
+        var subscriptionToMC = null; // Used to Mute and UnMute 
+                              // //undefined/null/false/0/NaN/"" (an empty string) are considered falsy in Js 
+
+        function publishMC(){
+            // messageToSend, sourceSystem, PhoneNumber: Variables from MessageChannel File.
+            const message = {
+                messageToSend : document.getElementById('textMessage').value,
+                sourceSystem  : 'Visualforce Page',
+                PhoneNumber   : '90898985885'
+                
+            };
+
+            sforce.one.publish(MC, message);
+        }
+
+        // The condition if (!subscriptionToMC) evaluates to true because the variable subscriptionToMC is initially undefined (or potentially null), and in JavaScript, undefined, null, and a few other values are considered "falsy".
+        // subscriptionToMC = undefined ---> falsy ---> ! falsy ----> truthy
+        // If subscriptionToMc == falsy (undefined/null)
+        // Un Mute
+
+        /*
+        function subscribeMC(){
+            if(! falsy){ / (! undefined)     //undefined/null/false/0/NaN/"" (an empty string) are considered falsy in Js and ! inverts it
+                subscriptionToMC = sforce.one.subscribe(MC, displayMessage); //displayMessage is a function
+            }
+        }
+        */
+
+        // Second time this function will not run, because 2nd time it will contain an empty object {}
+        // (! true) --> false
+
+        function subscribeMC(){
+            if(! subscriptionToMC){     //undefined/null/false/0/NaN/"" (an empty string) are considered falsy in Js and ! inverts it
+                subscriptionToMC = sforce.one.subscribe(MC, displayMessage); //displayMessage is a function
+            }
+        }
+
+        function displayMessage(message){
+            var msgLabel = document.querySelector('#mcMessageText');
+            msgLabel.innerHTML = message ? JSON.stringify(message, null, '\t') : 'No Message Payload';
+        }
+
+        // If there is data..
+        function unSubscribeMC(){
+            if(subscriptionToMC){
+                sforce.one.unsubscribe(subscriptionToMC);
+                subscriptionToMC = null;    
+            }
+
+        }
+    </script>
+</apex:page>

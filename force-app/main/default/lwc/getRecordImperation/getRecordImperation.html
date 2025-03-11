@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title='GET RECORD IMPERATION' icon-name='standard:opportunity'>
+        <template if:true={opportunityRecord}>
+            <p>Opportunity Name: {name}</p>
+            <p>Opportunity Stage: {stageName}</p>
+            <p>Opportunity Amount: {amount}</p>           
+        </template>
+        <template if:false={opportunityRecord}>
+            <p>Loading opportunity details...</p>
+        </template>
+
+
+        <template if:true={oppRecord}>
+            <lightning-datatable
+                key-field="id"
+                data={oppRecord}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+
+        <template if:false={oppRecord}>
+            <p>Loading opportunity details...</p>
+        </template>
+
+        <!--
+        <template if:true={opportunityRecord.data}>
+            <p>Opportunity Name: {name}</p>
+            <p>Opportunity Stage: {stageName}</p>
+            <p>Opportunity Amount: {amount}</p>
+        </template>
+        <template if:false={opportunityRecord.data}>
+            <p>Loading opportunity details...</p>
+        </template>
+        -->
+    </lightning-card>
+</template>

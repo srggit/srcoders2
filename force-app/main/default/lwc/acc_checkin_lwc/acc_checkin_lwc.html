@@ -1,0 +1,53 @@
+<template>
+
+
+    <lightning-quick-action-panel header="Check-In">
+        <lightning-record-edit-form object-api-name="Visit__c">
+            <lightning-card>
+                <h3 slot="title">
+                    <lightning-icon icon-name="standard:tour_check" size="medium"
+                        class="slds-m-right_small"></lightning-icon>
+                    Check-In Details
+                </h3>
+                <div slot="actions">
+                    <lightning-button type="submit" label="Check-In" variant="brand"></lightning-button>
+                </div>
+            </lightning-card>
+
+            <div class="slds-p-around_medium slds-p-vertical_small">
+                <div class="slds-grid slds-wrap slds">
+                    <div class="slds-col slds-size_6-of-12">
+                        <lightning-input-field field-name="Agenda_For_This_Visit__c"></lightning-input-field>
+                    </div>
+                </div>
+
+                <div class="slds-p-top_x-small slds-p-bottom_xx-small">
+                    <h4>Check In Image</h4>
+                </div>
+
+                <div class="slds-box slds-box_x-small slds-p-top_small slds-p-bottom_small"
+                    style="border: 0.5px solid grey;">
+                    <div class="slds-m-top_xx-small slds-p-bottom_x-small">
+                        <ul>
+                            <template for:each={fileUpload} for:item="file" for:index="index">
+                                <lightning-pill label={file.name} class="slds-m-right_xx-small" key={file.name}
+                                    data-index={index} onremove={removeFile}>
+                                    <lightning-icon icon-name={file.icon} alternative-text="People"></lightning-icon>
+                                </lightning-pill>
+                            </template>
+                        </ul>
+                    </div>
+                    <input type="file" accept="image/*" onchange={handleFileChange}></input>
+                </div>
+            </div>
+            <div>
+                <lightning-map map-markers={mapMarkers}> </lightning-map>
+            </div>
+
+
+
+        </lightning-record-edit-form>
+    </lightning-quick-action-panel>
+
+
+</template>

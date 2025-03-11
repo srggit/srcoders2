@@ -1,0 +1,29 @@
+<template>
+    <!-- One Way Data Binding -->
+    <lightning-card title="One-Two Way Data Binding" icon-name="custom:custom1">
+        <div class="slds-p-around_medium">
+            <h3> <b>One-Way Data Binding</b> </h3> <br/>
+            Your Name is {firstName}
+        </div>
+        
+        <div class="slds-p-around_medium">
+            <h3> <b>Two-Way Data Binding</b> </h3> <br/>
+            <lightning-input 
+                name="profession" 
+                type="text" 
+                label="Enter Your Profession" 
+                value={profession}
+                onkeyup={getProfession}>
+            </lightning-input>
+
+            <br/>
+            Your profession is {profession}
+
+            <br/> <br/>
+            <i>Note: Two-way data binding can be done without @track operator also. As @track is no longer required: from Salesforce. As it renderes the whole component, whenever something is changed on the component.</i>
+        </div>
+        
+
+    </lightning-card>
+
+</template>

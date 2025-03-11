@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Event with Data" icon-name="custom:custom20">
+
+        <div class="slds-p-around_medium">
+            <h3>Select Your Favourite Cricketer in Child Comp and See Details in Parent Comp.</h3>
+
+            <div class="flex">
+                <p>Parent Component</p>
+
+                <c-navbar-child-comp-s-t nav-list={navList} onselected={showSelectedImage}></c-navbar-child-comp-s-t>
+            </div>
+
+            <template if:true={selectedPlayer}>
+                <div class="card">
+                    <img src={selectedPlayer.imgUrl} alt={selectedPlayer.name} style="width: 100%" />
+
+                    <div class="container">
+                        <p>Name: {selectedPlayer.name}</p>
+                        <p>Rating: {selectedPlayer.rating}</p>
+                        <p>Country: {selectedPlayer.country}</p>
+                        <p>Position: {selectedPlayer.position}</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>

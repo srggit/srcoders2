@@ -1,0 +1,36 @@
+<apex:page controller="DML_Ex" >
+	<apex:form >
+        <apex:pageMessages />
+    	<apex:pageBlock title="Account Data" id="pb">
+            
+        	<apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Create" action="{! create}"/>
+                <apex:commandButton value="Cancel" action="{! cancel}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name"/>
+                    <apex:inputText value="{! accName}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Phone"/>
+                    <apex:inputText value="{! accPhone}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Rating"/>
+                    <apex:inputText value="{! accRating}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Industry"/>
+                    <apex:inputText value="{! accIndustry}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

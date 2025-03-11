@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Sign In Page" icon-name="standard:record_update">
+        <div class="slds-p-around_medium">
+            <h2 class="slds-text-heading_medium slds-m-bottom_small"> Sign Up Page </h2>
+
+            <lightning-input type="text" label="First Name"></lightning-input>
+            <lightning-input type="text" label="Last Name"></lightning-input>
+            <lightning-input type="text" label="Email"></lightning-input>
+            <lightning-input type="text" label="Set Password"></lightning-input>
+
+            <div class="slds-p-top_small">
+                <lightning-button label="Sign Up" onclick={submitHandler} variant="brand"></lightning-button> &nbsp; &nbsp;
+                <lightning-button label="Go Back" onclick={submitHandler} variant="brand-outline"></lightning-button>
+                <!-- <lightning-button label="Go Back" onclick={signInUpHandler} variant="brand-outline"></lightning-button> -->        
+            </div>
+
+        </div>
+    </lightning-card>
+
+</template>

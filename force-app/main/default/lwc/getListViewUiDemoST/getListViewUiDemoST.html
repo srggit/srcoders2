@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Ex: 2 Wire - getListUi Adapter Demo" icon-name="standard:account">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Acc Id</th>
+                    <th>Name</th>
+                    <th>Rating</th>
+                    <th>Industry</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <template if:true={accResult}>
+                    <template for:each={accResult} for:item="acc">
+                        <tr key={acc.id}>
+                            <td>{acc.id}</td>
+                            <td>{acc.fields.Name.value}</td>
+                            <td>{acc.fields.Rating.value}</td>
+                            <td>{acc.fields.Industry.value}</td>
+                            <td>{acc.fields.Phone.value}</td>
+                        </tr>
+                    </template>
+                </template>
+
+                <template if:false={accResult}>
+                    No Records Found
+                </template>
+
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

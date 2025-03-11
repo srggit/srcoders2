@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Ex:5 Wire - Get Picklist Values for Object's RecordType" icon-name="custom:custom63">
+
+        {accDefaultRecordTypeId}
+        <div class="slds-p-around_medium">
+            <template if:true={activePicklistValues}>
+                <lightning-combobox name="active" label="Active" value={activeValue} placeholder="Active"
+                    options={activePicklistValues} onchange={handleActiveChange}>
+                </lightning-combobox>
+            </template>
+        </div>
+    </lightning-card>
+</template>

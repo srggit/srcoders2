@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Revision - Account">
+        <lightning-button label="Refresh" icon-name="custom:custom34"
+            onclick={handleRefreshAccounts}></lightning-button>
+
+        <lightning-datatable data={accountsData} key-field="id" columns={accountsColumns}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

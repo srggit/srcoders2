@@ -1,0 +1,28 @@
+span{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px;
+    background-color: #bbb;
+}
+
+span:hover{
+    cursor: pointer;    
+}
+
+.red{
+    background: linear-gradient(#fb7f69, #a2261a);
+}
+.white{
+   background: linear-gradient(#f4f4f4, #cacaca);
+}
+.black{
+  background: linear-gradient(#767676, #070707);
+}
+.green{
+    background: linear-gradient(#8ed65a, #0e7d10);
+}
+.blue{
+   background: linear-gradient(#3468c3, #04348b);
+}

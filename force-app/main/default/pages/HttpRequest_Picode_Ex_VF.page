@@ -1,0 +1,20 @@
+<apex:page controller="HttpRequest_Picode_Ex">
+
+    <apex:sectionHeader title="Account" subtitle="New Account" help="/apex/page" />
+    
+    <apex:form >
+        <apex:pageBlock title="Account">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Create" action="{! invoke}"/>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection >
+                <apex:inputField value="{! acc.Name}"/>
+                <apex:inputField value="{! acc.Rating}"/>
+                <apex:inputField value="{! acc.Industry}"/>
+                <apex:inputField value="{! acc.Pincode__c}"/>
+                <apex:inputField value="{! acc.AnnualRevenue}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

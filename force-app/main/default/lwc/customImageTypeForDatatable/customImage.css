@@ -1,0 +1,6 @@
+.image-cell {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100%; /* Ensures the cell spans the full height */
+}

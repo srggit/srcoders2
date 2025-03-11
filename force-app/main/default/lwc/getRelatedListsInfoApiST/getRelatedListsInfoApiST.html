@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="getRelatedListsInfo - lightning/uiRelatedListApi" icon-name="custom:custom23">
+        <div class="slds-m-around_medium">
+
+            <template for:each={relatedListData} for:item="list">
+                <div key={list.entityLabel}>
+                    <p> Entity Label : {list.entityLabel} </p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<!-- PARENT COMPONENT -->
+<template>
+
+    <lightning-card title="Pagination" icon-name="standard:contact">
+
+        <template if:true={visibleContacts}>
+            <template for:each={visibleContacts} for:item="contact">
+                <p key={contact.Id}> {contact.FirstName} {contact.LastName} </p>
+            </template>
+        </template>
+
+        <div slot="footer">
+            <!-- STEP : 1 -->
+            <!-- Catching an Event from Child -->
+            <c-pagination-handler records={totalContacts} onupdate_records_on_page={updateContactRecordsEvent}></c-pagination-handler>
+        </div>
+
+    </lightning-card>
+
+</template>

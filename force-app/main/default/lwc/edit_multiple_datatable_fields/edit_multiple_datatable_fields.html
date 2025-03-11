@@ -1,0 +1,12 @@
+<template>
+
+    <!-- Editable DataTable -->
+    <lightning-card title="Editable DataTable" icon-name="standard:contact">
+        <lightning-input label="Search Here ..." placeholder="Enter Search Text ..."
+            onchange={getContacts}></lightning-input>
+
+        <lightning-datatable columns={contactCols} data={mappedContacts} key-field="Id" onsave={handleSave}
+            draft-values={draftValues}></lightning-datatable>
+    </lightning-card>
+
+</template>

@@ -1,0 +1,19 @@
+<template>
+    
+    <lightning-card
+
+        title="EMPLOYEE DATA - PARENT"
+        icon-name="standard:avatar">
+
+        <!-- Calling the Child Component -->
+        <!-- Listen to the Event -->
+        <c-event-emp-data-child
+            onemp_data_event={getEmpDataFromChild}>
+        </c-event-emp-data-child>
+
+        Employee Name : {empName} <br/>
+        Employee Salary : {empSalary} <br/>
+        Employee Phone : {empPhone} <br/>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,6 @@
+.custom-button-color{
+    
+    --slds-c-button-brand-color-background: #ffbc7e;
+    --slds-c-button-neutral-color-background: #72ffb9;
+    --slds-c-button-text-color: #000; /*neutral (default), base, and brand-outline*/
+}

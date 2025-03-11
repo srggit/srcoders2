@@ -1,0 +1,24 @@
+<template>
+
+    <lightning-card title="All Products" icon-name="standard:product">
+        <div class="slds-m-around_medium">
+
+            <!--
+            <lightning-datatable key-field="id" data={products} columns={columns} hide-checkbox-column></lightning-datatable>
+        -->
+
+            <!-- Here we have to use our custom DataTable Type which is extends the Databale as well as the new Type Property -->
+
+                <c-custom-image-type-for-datatable 
+                    key-field="id" 
+                    data={products} 
+                    columns={columns}
+                    hide-checkbox-column
+                    wrap-text-max-lines="3"
+                    >
+                </c-custom-image-type-for-datatable>
+
+        </div>
+    </lightning-card>
+
+</template>

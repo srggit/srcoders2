@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Delete Record" icon-name="action:delete">
+        <div class="slds-p-around_medium">
+            <!-- Display the record ID -->
+            <p>Record ID: {recordId}</p>
+
+            <!-- Delete button -->
+            <lightning-button label="Delete Record" onclick={handleDelete} variant="destructive"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

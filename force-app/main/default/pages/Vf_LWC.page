@@ -1,0 +1,23 @@
+<apex:page >
+    <apex:includeLightning />
+    
+    <apex:form >
+    	<apex:pageBlock title="LWC Component">
+        	<apex:pageBlockSection title="LWC Create Account" columns="1">
+                <div id="lwcComp">  </div>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <script>
+    	$Lightning.use("c:Lwc_In_Vf_Application", function(){
+            												$Lightning.createComponent(
+                                                                "c:createRecordImperation",
+                                                                {},
+                                                                "lwcComp",
+                                                                function(){}
+                                                                );
+            })
+                                                                
+    </script>
+</apex:page>

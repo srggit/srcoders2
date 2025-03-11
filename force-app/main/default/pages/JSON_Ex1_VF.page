@@ -1,0 +1,21 @@
+<apex:page controller="JSON_Ex1">
+    
+    serilize(Object)				<br/>
+    ------------------------------- <br/>
+    Integer : {! integerValue}		<br/>
+    Decimal : {! decimalValue}		<br/>
+    Account : {! accountValue}		<br/>
+    Student : {! studentValue}		<br/> <br/>
+    
+    serilizePretty(Object)			<br/>
+    ------------------------------- <br/>
+    Integer : {! integerPretty}		<br/>
+    Decimal : {! decimalPretty}		<br/>
+    Account : {! accountPretty}		<br/>
+    Student : {! studentPretty}		<br/> <br/>
+    
+    serilize(Object, suppressNulls) <br/>
+    ------------------------------- <br/>
+    studentWithoutSuppress : {! studentWithoutSuppress}	<br/>
+    studentWithSuppress : {! studentWithSuppress}
+</apex:page>

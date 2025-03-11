@@ -1,0 +1,17 @@
+.greenBar{
+    background-color: green;
+    height: 50px;
+    margin: 10px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}
+
+.redBar{
+    background-color: red;
+    height: 50px;
+    margin: 10px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}

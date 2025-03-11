@@ -1,0 +1,66 @@
+<template>
+
+    <lightning-card title="Conditional Rendering (if:true / if:false)" icon-name="custom:custom3">
+
+        <div class="slds-p-around_medium">
+            <lightning-button variant="brand" label="Show/Hide Text" onclick={handleClick}></lightning-button>
+
+            <template if:true={showText}>
+                <p> <br /> You can see the hidden Text!! Example of template if:true </p>
+            </template>
+
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Conditional Rendering (if:false)" icon-name="custom:custom4">
+
+        <div class="slds-p-around_medium">
+            <lightning-button variant="brand" label="Hide Text" onclick={handleHide}></lightning-button>
+
+            <template if:false={hideText}>
+                <p> <br /> You can see the hidden Text!! Example of template if:false </p>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Conditional Rendering using @track (if:true)" icon-name="custom:custom5">
+        <div class="slds-p-around_medium">
+            <lightning-button variant="brand" label="Hide Text" onclick={handleObject}></lightning-button>
+
+            <template if:true={objectText.result}>
+                <p> <br /> You can see the hidden Text!! Example of template if:true </p>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Getter in LWC" icon-name="custom:custom6">
+        <div class="slds-p-around_medium">
+            <h1 class="slds-text-heading_small"> {title} </h1>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Getter (Dynamic Buttons)" icon-name="custom:custom6">
+        <div class="slds-p-around_medium">
+            <lightning-button variant="brand" label="ON" onclick={handleSwitch} name="on"></lightning-button> &nbsp; &nbsp;
+            <lightning-button variant="brand" label="OFF" onclick={handleSwitch} name="off"></lightning-button>
+        </div>
+
+        <div class="slds-p-around_medium">
+
+            <div class={boxStatus}></div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Conditional Renderning Based on Event Trigger" icon-name="custom:custom7">
+        <div class="slds-p-around_medium">
+            <lightning-input type="text" label="Enter Password" value={password} onchange={passwordHandler}></lightning-input>
+        </div>
+
+        <template if:true={checkPassword}>
+            <div class="slds-p-around_medium">
+                <p> Welcome User, You Successfully Logged in !!</p>
+            </div>
+        </template>
+    </lightning-card>
+
+</template>

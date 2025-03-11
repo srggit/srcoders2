@@ -1,0 +1,29 @@
+<apex:page controller="List_Ex_2">
+    <apex:form title="Form">
+    	<apex:pageBlock title="Customer Details" id="pb">
+            
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Add" action="{! addMe}" reRender="pb"/>
+                <apex:commandButton value="Clear Table" action="{! clearData}" reRender="pb"/>
+            </apex:pageBlockButtons>
+            
+        	<apex:pageBlockSection title="Customer Fields" columns="2">
+                <apex:inputText value="{! cust.Name}"/>
+                <apex:inputText value="{! cust.Last_Name__c}"/>
+                <apex:inputText value="{! cust.City__c}"/>
+                <apex:inputText value="{! cust.Salary__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Customer List" collapsible="true" columns="1" rendered="{! customers.size > 0}"> 
+            	<apex:pageBlockTable value="{! customers}" var="c">
+                    <apex:column value="{! c.Name}"/>
+                    <apex:column value="{! c.Last_Name__c}"/>
+                    <apex:column value="{! c.City__c}"/>
+                    <apex:column value="{! c.Salary__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

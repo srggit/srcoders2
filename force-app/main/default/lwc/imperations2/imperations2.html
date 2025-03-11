@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="LWC Imperation - Update">
+        <lightning-input label="Enter Search Text" onchange={getSearchKey}></lightning-input>
+
+        <lightning-datatable key-field="Id"
+                             columns={columns}
+                             data={contactList}
+                             onsave={handleSave}
+                             draft-values={draftValues}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

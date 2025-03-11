@@ -1,0 +1,8 @@
+.slds-modal__container {
+    width: 100%;
+}
+
+.slds-modal__header, .slds-modal__footer {
+    display: flex;
+    justify-content: space-between;
+}

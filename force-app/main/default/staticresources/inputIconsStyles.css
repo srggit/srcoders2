@@ -1,0 +1,23 @@
+/* slds-input is the internal property of lightning-input, 
+we cannot directly modify it, 
+that's why we used external css file and uploaded to Static Resource. */
+
+.icon-left .slds-input{
+    padding-left : 30px;
+}
+
+.icon-right .slds-input{
+    padding-right :30px;
+}
+
+
+/*
+.icon-left .slds-input{
+    padding-left : var(--lwc-varSpacingLarge, 2rem);
+}
+
+.icon-right .slds-input{
+    padding-right : var(--lwc-varSpacingLarge, 2rem);
+}
+
+*/

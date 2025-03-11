@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rate_Of_Interest__c</fullName>
+    <formula>CASE(Type_Of_Loan__c , 
+        &apos;Education&apos;, 0.12,
+        &apos;Housing&apos;, 0.10,
+        &apos;Personal&apos;, 0.11,
+         0.4
+) 
+
+
+
+
+
+
+
+ /*
+IF( 
+   ISPICKVAL(Type_Of_Loan__c, &apos;Education&apos;), 0.12, 
+     
+      IF(
+         ISPICKVAL(Type_Of_Loan__c, &apos;Housing&apos;), 0.10, 
+
+         IF(
+            ISPICKVAL(Type_Of_Loan__c, &apos;Personal&apos;), 0.11, 0.4
+         )
+      )
+)
+*/
+/* IF(logical_test, value_if_true, value_if_false) */</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Rate Of Interest</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

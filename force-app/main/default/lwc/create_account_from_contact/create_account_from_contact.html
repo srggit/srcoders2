@@ -1,0 +1,25 @@
+<template>
+    <lightning-modal-header label="Create Account from Contact"></lightning-modal-header>
+
+    <lightning-modal-body>
+        <lightning-record-form object-api-name="Account" onsuccess={handleSuccess}>
+            <lightning-messages></lightning-messages>
+
+        </lightning-record-form>
+    </lightning-modal-body>
+
+    <lightning-modal-footer>
+        <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button> &nbsp; &nbsp;
+        <lightning-button variant="brand" label="Save Test" onclick={handleSave}></lightning-button>
+    </lightning-modal-footer>
+</template>
+
+<!--
+<template>
+    <lightning-modal-header label="My Modal Heading"></lightning-modal-header>
+    <lightning-modal-body> Content: {content} </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button label="OK" onclick={handleOkay}></lightning-button>
+    </lightning-modal-footer>
+</template>
+-->

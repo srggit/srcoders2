@@ -1,0 +1,56 @@
+<template>
+    <br/> <br/>
+    <lightning-card title="Collections and Loop">
+        ***** 1.  for:each *****
+        <br/> <br/>
+        <template for:each={cities} for:item=c>
+            <p key={c}>{c}</p>
+        </template>
+        
+        <br/>
+        ***** 2. iterator:item ***** 
+        <br/> <br/>
+        <template iterator:item={cities}>
+            <p key={item.value}> {item.value} </p>
+        </template>
+
+        <br/>
+        ***** 3. JSON Format *****
+        <br/> <br/>
+        Name : {empData.Name} <br/>
+        Salary : {empData.Salary} <br/> 
+        Age : {empData.Age} <br/>
+        Post : {empData.Post} <br/>
+        City : {empData.City}
+        <br/> <br/>
+
+        ***** 4. Radio-Group *****
+        <lightning-radio-group 
+        name="radioGroup" 
+        label="Radio Group" 
+        options={options} 
+        value={radioBtnValue}
+        onchange={handleChange}>
+        </lightning-radio-group>
+        <br/> 
+        Value Selected : {value}
+
+        <br/>
+        <lightning-input 
+            label="Enter Starting Range"
+            value={startingRange}
+            onchange={handleRangeChange}>
+        </lightning-input>
+
+        <br/>
+
+        <lightning-button 
+            name="Calculate"
+            label="Calculate"
+            onclick={calculateRangeTotal}>
+        </lightning-button>
+    </lightning-card>
+    
+
+
+</template>

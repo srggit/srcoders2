@@ -1,0 +1,78 @@
+<apex:page lightningStylesheets="true">
+    <apex:slds />
+    <!-- Allows Apex SLDS classes to be used in VF -->
+
+    <div class="slds-scope">
+        <div class="slds-p-around_small">
+            <p> Enter Message to Publish </p>
+            <input type="text" class="slds-input slds-p-bottom_small" id="theMessage" />
+
+            <div class="slds-p-bottom_small slds-p-top_small">
+                <button class="slds-button slds-button_neutral" onclick="publishMessage()"> Publish Your Message
+                </button>
+                <button class="slds-button slds-button_neutral" onclick="subscribeMessage()"> Subscribe </button>
+                <button class="slds-button slds-button_neutral" onclick="unsubscribeMessage()"> Unsubscribe </button>
+            </div>
+
+            <p> Message Received </p>
+            <div id="receivedMessage">
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Code to handle Message Communication -->
+    <script>
+        // Step 1: Create MessageChannel Reference
+        let SAMPLEMC = '{! $MessageChannel.SampleMessageChannel__c}';   // SampleMessageChannel is the name of the message channel we created which contains other data also.
+        let subscribeToMC;
+
+        // Publishing the Message from VF page
+        function publishMessage() {
+            console.log('publishMessage()');
+
+            let data = document.getElementById('theMessage').value;
+            console.log('data : ', data);
+
+            const payload = {
+                lmsData: {      // lmsData is the fieldName defined in SampleMessageChannel file
+                    value: data
+                }
+            };
+            console.log('payload : ', payload);
+
+            sforce.one.publish(SAMPLEMC, payload);
+        }
+
+        // Subscribing to the Message from external systems
+        function subscribeMessage() {
+            console.log('subscribeMessage');
+
+            if (!subscribeToMC) {   // if subscribeToMC is false or null, at starting it will be null, !null / !false = true
+                console.log('Subscribing to the Message Channel');
+                subscribeToMC = sforce.one.subscribe(SAMPLEMC, msgHandler, { scope: 'APPLICATION' });
+                // msgHandler is callback(), which contains the data from other application
+                // scope: Defines the scope in Application or Global
+                console.log('Subscribed successfully');
+            } else {
+                console.log('Already subscribed');
+            }
+        }
+
+        // Defining callback method
+        function msgHandler(message) {
+            let receivedMessage = document.getElementById('receivedMessage');
+
+            receivedMessage.innerHTML = message && message.lmsData.value ? message.lmsData.value : 'No message sent';
+        }
+
+        // Defining unsubscribeMsg
+        function unsubscribeMessage() {
+            // If already subscribed or subscribeToMC == true
+            if (subscribeToMC) {
+                sforce.one.unsubscribe(subscribeToMC);
+                subscribeToMC = null;
+            }
+        }
+    </script>
+
+</apex:page>

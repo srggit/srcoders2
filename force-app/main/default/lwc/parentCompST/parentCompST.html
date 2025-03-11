@@ -1,0 +1,29 @@
+<template>
+    <div class="margin-bottom-2rem">
+        <lightning-card title="Ex:1 Parent to child data communication using strings" icon-name="custom:custom14">
+            <div class="slds-m-around_medium">
+                <div>
+                    <c-child-comp-s-t message="Indicates a dangerous or potentially negative action"></c-child-comp-s-t>
+
+                    <c-child-comp-s-t class-name="success" message="Success! Indicates a successful or positive action.">
+                    </c-child-comp-s-t>
+                    
+                    <c-child-comp-s-t class-name="info" message="Info! Indicates a neutral informative change or action.">
+                    </c-child-comp-s-t>
+
+                    <c-child-comp-s-t class-name="warning" message="Warning! Indicates a warning that might need attention.">
+                    </c-child-comp-s-t>
+                </div>
+            </div>
+        </lightning-card>
+
+        <lightning-card title="Ex:2 Business Card - Parent To Child Data Communication using Array/Objects" icon-name="custom:custom15">
+
+            <div class="slds-m-around_medium">
+                <c-child-comp-s-t user-details={userDetails}>
+                </c-child-comp-s-t>
+            </div>
+
+        </lightning-card>
+    </div>
+</template>

@@ -1,0 +1,26 @@
+<apex:page standardController="Account" extensions="Contact_Extension_Controller">
+    <apex:form >
+        
+    	<apex:pageBlock title="Account-Contacts">
+            <apex:pageBlockButtons location="bottom">
+            	<apex:commandButton value="Send Email" action="{! sendEmail}"/>
+            </apex:pageBlockButtons>
+            
+			<apex:pageBlockSection title="Account Data" collapsible="true">
+                <apex:outputText value="{! Account.Name}" />
+                <apex:outputText value="{! Account.Phone}" />
+                <apex:outputText value="{! Account.Rating}" />
+                <apex:outputText value="{! Account.Industry}" />
+                <apex:outputText value="{! Account.AnnualRevenue}" />
+            </apex:pageBlockSection>
+            <br/> <br/>
+            
+            <apex:pageBlockTable value="{! lstContacts}" var="c" rendered="{! lstContacts.size > 0}">
+                <apex:column value="{! c.FirstName}"/>
+                <apex:column value="{! c.LastName}"/>
+                <apex:column value="{! c.Email}"/>
+                <apex:column value="{! c.Phone}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

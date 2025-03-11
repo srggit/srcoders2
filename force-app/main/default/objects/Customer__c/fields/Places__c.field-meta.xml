@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Places__c</fullName>
+    <label>Places</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>City__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sri Nagar</fullName>
+                <default>false</default>
+                <label>Sri Nagar</label>
+            </value>
+            <value>
+                <fullName>Friends Colony</fullName>
+                <default>false</default>
+                <label>Friends Colony</label>
+            </value>
+            <value>
+                <fullName>Gittikhadan</fullName>
+                <default>false</default>
+                <label>Gittikhadan</label>
+            </value>
+            <value>
+                <fullName>Gorewada</fullName>
+                <default>false</default>
+                <label>Gorewada</label>
+            </value>
+            <value>
+                <fullName>Shivaji Nagar</fullName>
+                <default>false</default>
+                <label>Shivaji Nagar</label>
+            </value>
+            <value>
+                <fullName>SR Nagar</fullName>
+                <default>false</default>
+                <label>SR Nagar</label>
+            </value>
+            <value>
+                <fullName>Hinjwadi</fullName>
+                <default>false</default>
+                <label>Hinjwadi</label>
+            </value>
+            <value>
+                <fullName>Chrompet</fullName>
+                <default>false</default>
+                <label>Chrompet</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Ban</controllingFieldValue>
+            <valueName>Hinjwadi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Che</controllingFieldValue>
+            <valueName>Chrompet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hyd</controllingFieldValue>
+            <valueName>SR Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ngp</controllingFieldValue>
+            <valueName>Friends Colony</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ngp</controllingFieldValue>
+            <valueName>Gittikhadan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ngp</controllingFieldValue>
+            <valueName>Gorewada</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pune</controllingFieldValue>
+            <valueName>Sri Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mum</controllingFieldValue>
+            <valueName>Shivaji Nagar</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

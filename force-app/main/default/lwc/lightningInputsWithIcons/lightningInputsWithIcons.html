@@ -1,0 +1,70 @@
+<template>
+    <lightning-card 
+        title="LWC Lightning Input With Icons"
+        icon-name="custom:custom63">
+
+        <div class="slds-var-p-around_medium">
+
+            <div class="slds-is-relative">
+                <lightning-icon icon-name="utility:email" 
+                    size="small" 
+                    title="Email"
+                    class="input-icons left-icon"
+                    alternative-text="Email">
+                </lightning-icon>
+
+                <lightning-input
+                    label="Email"
+                    type="text"
+                    class="icon-left">
+                </lightning-input>
+            </div>
+            
+        </div>
+        <!-- icon-right / icon-left : this classes are uploaded in Static Resources. File Name : inputIconsStyles-->
+        <div class="slds-var-p-around_medium">
+
+            <div class="slds-is-relative">
+                <lightning-icon icon-name={passwordIcon} 
+                    size="small" 
+                    title="Password"
+                    class="input-icons right-icon"
+                    onclick={togglePasswordVisibility}
+                    alternative-text="Password">
+                </lightning-icon>
+
+                <lightning-input
+                    label="Password"
+                    type={passwordType}
+                    class="icon-right">
+                </lightning-input>
+            </div>
+            
+        </div>
+
+    </lightning-card>
+
+    <lightning-card title="Method 1 to change text color on button click.">
+        <p class={changeParaColor}>
+            This is testing para 1
+        </p>
+
+        <lightning-button 
+            label="Change Color" 
+            onclick={changeColor}>
+        </lightning-button>
+
+    </lightning-card>
+
+    <lightning-card title="Method 2 to change text color on button click.">
+        <p class={getParaColor}>
+            This is testing para 2
+        </p>
+
+        <lightning-button 
+            label="Change Color" 
+            onclick={toggleParaColor}>
+        </lightning-button>
+
+    </lightning-card>
+</template>

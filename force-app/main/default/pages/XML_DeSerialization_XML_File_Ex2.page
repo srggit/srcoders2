@@ -1,0 +1,12 @@
+<apex:page controller="XML_DeSerialization_XML_File_Ex2">
+    <apex:form >
+        <apex:outputLabel value="Uplaod XML File" />
+        <apex:inputFile fileName="Test" value="{! xmlFile}" />   <br/> <br/>
+
+        <apex:commandButton value="Convert" action="{! convert}" /> <br/> <br/>
+
+        <apex:outputLabel value="Converted Data : " />  
+
+        <apex:outputLabel value="{!result}" />
+    </apex:form>
+</apex:page>

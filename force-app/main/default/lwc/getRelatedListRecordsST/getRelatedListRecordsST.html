@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="getRelatedListRecords - lightning/uiRelatedListApi" icon-name="custom:custom34">
+        <div class="slds-m-around_medium">
+            <template if:true={relatedContactRecords}>
+                <template for:each={relatedContactRecords} for:item="contact">
+                    <div key={contact.Id}>
+                        <p>FirstName : {contact.fields.FirstName.value}</p>
+                        <p>Id : {contact.fields.Id.value}</p>
+                    </div>
+                </template>
+
+                <br /> <br />
+                <template for:each={modifiedContacts} for:item="contact">
+                    <div key={contact.contactId}>
+                        <p>FirstName : {contact.contactName}</p>
+                        <p>Id : {contact.contactId}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>

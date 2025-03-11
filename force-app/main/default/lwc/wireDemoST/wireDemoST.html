@@ -1,0 +1,50 @@
+<template>
+    <!-- Wire as a Property -->
+    <lightning-card title="Wire as a Property" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+
+            <strong>Wire as a Property</strong>
+            <template for:each={wiredAccounts.data} for:item="acc">
+                <div key={acc.Id} class="slds">
+                    <p>Account Name : {acc.Name}</p>
+                    <p>Account Rating : {acc.Rating}</p>
+                    <p>Account Industry : {acc.Industry}</p>
+                </div>
+            </template>
+
+            <br />
+            <strong> Get Data Using getSObjectValue </strong>
+            Account Name[0] : {accName}
+            <br />
+
+            <br />
+            <strong>Wire as a function</strong>
+            <template for:each={accResults} for:item="acc">
+                <div key={acc.Id} class="slds">
+                    <p>Account Name : {acc.Name }</p>
+                    <p>Account Rating : {acc.Rating}</p>
+                    <p>Account Industry : {acc.Industry}</p>
+                    <p>Account Revenue :
+                        <lightning-formatted-number value={acc.AnnualRevenue} format-style="currency"
+                            currency-code="INR" currency-displacy-as="code"></lightning-formatted-number>
+                    </p>
+                </div>
+            </template>
+
+            <br />
+            <strong>Wire as a Property/Function By passing Parameters</strong>
+
+            <p>{accountById.Name} : {accountById.Phone} </p>
+
+            <br />
+            <strong>Calling an Apex Method Imperatively</strong> <br />
+            <lightning-button label="Load Contacts" variant="brand" onclick={loadContacts}></lightning-button> <br />
+
+            <template for:each={contacts} for:item="con">
+                <div key={con.Id}>
+                    <p>{con.FirstName} </p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

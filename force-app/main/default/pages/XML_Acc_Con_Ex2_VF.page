@@ -1,0 +1,10 @@
+<apex:page controller="XML_Acc_Con_Ex2">
+    <apex:form >
+        <apex:outputLabel value="Enter SearchText" />
+        <apex:inputText value="{! searchText}" />
+
+        <apex:commandButton value="Search" action="{! searchRecords}" reRender="ol" />
+
+        <apex:outputLabel value="{! xmlResult}" id="ol" />
+    </apex:form>
+</apex:page>

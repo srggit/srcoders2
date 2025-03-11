@@ -1,0 +1,13 @@
+<template>
+
+    <lightning-card title="Refresh Component Without Page Refresh" icon-name="custom:custom25">
+
+        <div class="slds-p-around_medium">
+
+            <template if:true={contacts.data}>
+                <lightning-datatable key-field="Id" data={contacts.data} columns={columns} draft-values={draftValues}
+                    onsave={handleSave}></lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>

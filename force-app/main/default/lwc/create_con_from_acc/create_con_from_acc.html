@@ -1,0 +1,44 @@
+<template>
+    <lightning-modal-header label="Create Contact Cust"></lightning-modal-header>
+    
+    <lightning-modal-body>
+
+        <!--
+        <lightning-record-form 
+            object-api-name="Contact" 
+            fields={conFields}
+            mode="edit"
+            onsuccess={handleSave}>
+
+            <lightning-input-field field-name="AccountId" value={recordId}></lightning-input-field>
+        </lightning-record-form>
+        -->
+
+        <lightning-record-edit-form  object-api-name="Contact">
+            <!-- Fields to edit for Contact --> 
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item size="6"> 
+                    <lightning-input-field field-name="FirstName"   onchange={getFirstName}>             </lightning-input-field>
+                    <lightning-input-field field-name="Phone"       onchange={getPhone}>                 </lightning-input-field>
+                    <lightning-input-field field-name="Fax"         onchange={getFax}>                   </lightning-input-field>
+                    <lightning-input-field field-name="AccountId"   onchange={getAccId} value={recordId}></lightning-input-field>
+                </lightning-layout-item>
+            
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="LastName"    onchange={getLastName}>              </lightning-input-field>
+                    <lightning-input-field field-name="Email"       onchange={getEmail}>                 </lightning-input-field>
+                    <lightning-input-field field-name="Title"       onchange={getTitle}>                 </lightning-input-field>
+                    <lightning-input-field field-name="Department"  onchange={getDepartment}>            </lightning-input-field>
+                    
+                </lightning-layout-item>       
+            </lightning-layout>        
+        </lightning-record-edit-form>
+
+    </lightning-modal-body>
+    
+    
+    <lightning-modal-footer>
+        <lightning-button label="Save" onclick={handleSave} variant="brand"></lightning-button> &nbsp;
+        <lightning-button label="Cancel" onclick={handleCencel}></lightning-button>
+    </lightning-modal-footer>
+</template>

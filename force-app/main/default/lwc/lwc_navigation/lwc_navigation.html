@@ -1,0 +1,103 @@
+<template>
+
+    <lightning-card title="Create Acc Con Opp - Navigation Example">
+        <br /> <br />
+        <div class="slds-grid slds-wrap" style="margin-top: -1rem; margin-bottom: 4rem;">
+
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_medium">
+                <div class="accountContainer slds-p-horizontal_medium">
+                    <div class="slds-align_absolute-center slds-text-heading_label">
+                        <lightning-icon icon-name="standard:account" size="medium"
+                            class="slds-m-right_small"></lightning-icon>
+                        Account Details
+                    </div>
+                    <hr>
+                    <lightning-record-edit-form object-api-name="Account" density="Comfy">
+                        <lightning-input-field onchange={handleAccFieldChange} field-name="Name" name="name">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleAccFieldChange} field-name="Rating" name="rating">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleAccFieldChange} field-name="Industry" name="industry">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleAccFieldChange} field-name="AnnualRevenue"
+                            name="annualRevenue"> </lightning-input-field>
+                        <lightning-input-field onchange={handleAccFieldChange} field-name="Ownership" name="ownership">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleAccFieldChange} field-name="Website" name="website">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleAccFieldChange} field-name="Description"
+                            name="description"> </lightning-input-field>
+
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_medium">
+                <div class="accountContainer slds-p-horizontal_medium">
+                    <div class="slds-align_absolute-center slds-text-heading_label">
+                        <lightning-icon icon-name="standard:contact" size="medium"
+                            class="slds-m-right_small"></lightning-icon>
+                        Contact Details
+                    </div>
+                    <hr>
+                    <lightning-record-edit-form object-api-name="Contact" density="Comfy">
+                        <lightning-input-field onchange={handleConFieldChange} field-name="FirstName" name="firstName">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleConFieldChange} field-name="LastName" name="lastName">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleConFieldChange} field-name="Phone" name="phone">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleConFieldChange} field-name="Email" name="email">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleConFieldChange} field-name="Title" name="title">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleConFieldChange} field-name="Department"
+                            name="department"> </lightning-input-field>
+                        <lightning-input-field onchange={handleConFieldChange} field-name="Fax" name="fax">
+                        </lightning-input-field>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_medium">
+                <div class="accountContainer slds-p-horizontal_medium">
+                    <div class="slds-align_absolute-center slds-text-heading_label">
+                        <lightning-icon icon-name="standard:opportunity" size="medium"
+                            class="slds-m-right_small"></lightning-icon>
+                        Opportunity Details
+                    </div>
+                    <hr>
+                    <lightning-record-edit-form object-api-name="Opportunity" density="Comfy">
+                        <lightning-input-field onchange={handleOppFieldChange} field-name="Name" name="name">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleOppFieldChange} field-name="Type" name="type">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleOppFieldChange} field-name="Amount" name="amount">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleOppFieldChange} field-name="StageName" name="stage">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleOppFieldChange} field-name="LeadSource"
+                            name="leadSource"> </lightning-input-field>
+                        <lightning-input-field onchange={handleOppFieldChange} field-name="CloseDate" name="closeDate">
+                        </lightning-input-field>
+                        <lightning-input-field onchange={handleOppFieldChange} field-name="Description"
+                            name="description"> </lightning-input-field>
+
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="slds-align_absolute-center slds-m-top_medium footer">
+            <lightning-button label="Save" onclick={handleSave} icon-name="utility:save"
+                variant="brand"></lightning-button> &nbsp;
+            <lightning-button label="Reset" onclick={handleReset} icon-name="utility:sync"
+                variant="neutral"></lightning-button> &nbsp;
+            <lightning-button label="Cancel" onclick={handleCancel} icon-name="utility:variable"
+                variant="neutral"></lightning-button> &nbsp;
+        </div>
+
+    </lightning-card>
+
+</template>

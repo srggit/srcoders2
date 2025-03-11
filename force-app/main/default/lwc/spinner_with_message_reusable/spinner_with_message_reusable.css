@@ -1,0 +1,13 @@
+.loader::after {
+    content: attr(data-text);    /* This property is used to get the data from HTML in css */
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: calc(50% + 1.6rem);  /* Formula to calculate the vertical position of the text in Browser Developer Tools (Inspect) */
+    color: gray;
+    font-family: 'SalesforceSans', Arial, Helvetica, sans-serif;
+}
+
+.inverse{
+    background: rgb(0, 0, 0, 0.7);  /* rgb(red, green, blue, opacity) */
+}

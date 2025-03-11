@@ -1,0 +1,18 @@
+<template>
+    
+    <lightning-card 
+        title="Media Player - Parent"
+        icon-name="standard:video">
+        <br/>
+
+        &nbsp; &nbsp; &nbsp; <b> {label} : {vol} </b>
+        <br/><br/>
+
+        <!-- CALL THE CHILD COMPONENT -->
+        <!-- Listen to the Event -->
+        <c-events-declarative-child 
+            onincrease_vol_event = {callIncreaseVol}
+            ondecrease_vol_event = {callDecreaseVol}>
+        </c-events-declarative-child>  
+    </lightning-card>
+</template>

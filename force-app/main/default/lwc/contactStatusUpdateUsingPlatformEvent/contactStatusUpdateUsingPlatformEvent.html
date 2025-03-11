@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Contacts Update Using Platform Event" icon-name="custom:custom23">
+
+        <template if:true={contacts}>
+            <lightning-datatable data={contacts} key-field="id" columns={columns}>
+
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>

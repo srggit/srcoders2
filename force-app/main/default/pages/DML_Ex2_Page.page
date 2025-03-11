@@ -1,0 +1,33 @@
+<apex:page controller="DML_Ex2">
+    <apex:form >
+    	<apex:pageBlock title="Account Related Contact & Opportunity" tabStyle="Account">
+        	
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{! saveRecords}"/>
+                <apex:commandButton value="Cancel" action="{! cancel}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection title="Account Record">
+                <apex:inputField value="{! acc.Name}" />
+                <apex:inputText value="{! acc.Rating}" />
+                <apex:inputField value="{! acc.Industry}" />
+                <apex:inputText value="{! acc.Ownership}" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Contact Record">
+                <apex:inputField value="{! con.FirstName}" />
+                <apex:inputText value="{! con.LastName}" />
+                <apex:inputField value="{! con.Email}" />
+                <apex:inputText value="{! con.Phone}" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Opportunity Record">
+                <apex:inputField value="{! opp.Name}" />
+                <apex:inputText value="{! opp.StageName}" />
+                <apex:inputField value="{! opp.CloseDate}" />
+                <apex:inputText value="{! opp.Amount}" />
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

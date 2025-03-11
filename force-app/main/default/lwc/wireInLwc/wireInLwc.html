@@ -1,0 +1,68 @@
+<template>
+    <lightning-card title="Display All Accounts" icon-name="standard:account"> 
+        <p style="font-size: 20px;">**** Display in Tile Format **** </p> <br/>
+        
+        <template for:each={accounts.data} for:item="acc">
+            <p key={acc.Id}> Name : {acc.Name}  ===> Rating : {acc.Rating} ===> Industry : {acc.Industry} </p>
+        </template>
+
+        <p style="font-size: 20px;">**** Display in Table Format **** </p> <br/>
+        <table>
+            <thead>
+                <tr>
+                    <th>Account Name</th>
+                    <th>Rating</th>
+                    <th>Industry</th>
+                    <th>Phone</th>
+                    <th>Annual Revenue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={accounts.data} for:item="acc">
+                    <tr key={acc.Id}>
+                        <td>{acc.Name}</td>
+                        <td>{acc.Rating}</td>
+                        <td>{acc.Industry}</td>
+                        <td>{acc.Phone}</td>
+                        <td>{acc.AnnualRevenue}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+
+        <p style="font-size: 20px;">**** Display in Row Format **** </p> <br/>
+        <table>
+            <tbody>
+                <template for:each={accounts.data} for:item="acc">
+                    <!-- Row for Account Name -->
+                    <tr key={acc.Id}>
+                        <td><strong>Account Name:</strong> {acc.Name}</td>
+                    </tr>
+                    <!-- Row for Account Rating -->
+                    <tr key={acc.Id}>
+                        <td><strong>Rating:</strong> {acc.Rating}</td>
+                    </tr>
+                    <!-- Row for Account Industry -->
+                    <tr key={acc.Id}>
+                        <td><strong>Industry:</strong> {acc.Industry}</td>
+                    </tr>
+                    <!-- Add a blank row for spacing between different accounts -->
+                    <tr key={acc.Id}>
+                        <td>&nbsp;</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+
+
+        <p style="font-size: 20px;">**** Display in Data Table Format **** </p> <br/>
+        
+        <lightning-datatable key-field="Id" columns={columns} data={accounts.data}></lightning-datatable>
+ 
+
+
+
+
+
+    </lightning-card>
+</template>

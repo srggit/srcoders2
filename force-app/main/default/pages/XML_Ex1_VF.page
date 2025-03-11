@@ -1,0 +1,7 @@
+<apex:page controller="XML_Ex1" action="{! Example2}">
+    {! result1}
+
+    <br/> <br/> <br/>
+
+    {! result2}
+</apex:page>

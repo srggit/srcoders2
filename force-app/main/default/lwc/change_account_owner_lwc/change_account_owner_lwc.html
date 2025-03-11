@@ -1,0 +1,92 @@
+<template>
+    <div class="container">
+        <template if:true={isToastVisible}>
+
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_success" role="status">
+                    <span class="slds-assistive-text">success</span>
+                    <span
+                        class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top"
+                        title="Description of icon when needed">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"></use>
+                        </svg>
+                    </span>
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small" style="padding-left: 60px;">
+                            Owner Changed Successfully !!
+                        </h2>
+                    </div>
+                    <div class="slds-notify__close">
+                        <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Close">
+                            <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                            </svg>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </template>
+
+        <div class="content">
+            <lightning-card icon-name="standard:product_transfer">
+                <h3 slot="title">
+                    <b>Change Account Contact Opportunity Owners</b>
+                </h3>
+
+                <div slot="actions">
+                    <lightning-button label="Proceed" onclick={handleProceed} variant="brand"> </lightning-button>
+                    &nbsp;
+                </div>
+
+                <div class="slds-p-around_medium">
+
+                    <div>
+                        <lightning-combobox label="Select User" placeholder="Search User..." options={userOptions}
+                            onchange={handleChange}>
+                        </lightning-combobox>
+                    </div>
+
+                    <div class="slds-m-around_small">
+                        <lightning-input type="checkbox-button" variant="label-hidden" name="openOpps"
+                            onchange={handleCheck} style="display: inline-block; vertical-align: middle;">
+                        </lightning-input>
+                        <span class="slds-m-left_small">Transfer All Open Opportunity's</span>
+                    </div>
+
+                    <div class="slds-m-around_small">
+                        <lightning-input type="checkbox-button" variant="label-hidden" name="allOpps"
+                            onchange={handleCheck} style="display: inline-block; vertical-align: middle;">
+                        </lightning-input>
+                        <span class="slds-m-left_small">Transfer All Opportunity's</span>
+                    </div>
+
+                    <div class="slds-m-around_small">
+                        <lightning-input type="checkbox-button" variant="label-hidden" name="allConts"
+                            onchange={handleCheck} style="display: inline-block; vertical-align: middle;">
+                        </lightning-input>
+                        <span class="slds-m-left_small">Transfer All Contact's</span>
+                    </div>
+
+                    <div class="slds-m-around_small">
+                        <lightning-input type="checkbox-button" variant="label-hidden" name="allAccs"
+                            onchange={handleCheck} style="display: inline-block; vertical-align: middle;">
+                        </lightning-input>
+                        <span class="slds-m-left_small">Transfer All Accounts's</span>
+                    </div>
+
+                </div>
+            </lightning-card>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+</template>

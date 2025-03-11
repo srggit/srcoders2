@@ -1,0 +1,27 @@
+<template>
+    
+    <lightning-card title="Sort Cases By Priorities - Wire a Function" icon-name="standard:case">
+
+        *************** HIGH PRIORITY CASES ****************** : {highPCases.length}
+        <lightning-datatable 
+            key-field="Id" 
+            columns={columns} 
+            data={highPCases}>
+        </lightning-datatable>
+
+        *************** MEDIUM PRIORITY CASES ****************** : {mediumPCases.length}
+        <lightning-datatable 
+            key-field="Id" 
+            columns={columns} 
+            data={mediumPCases}>
+        </lightning-datatable>
+
+        *************** LOW PRIORITY CASES ****************** : {lowPCases.length}
+        <lightning-datatable 
+            key-field="Id" 
+            columns={columns} 
+            data={lowPCases}>
+        </lightning-datatable>
+        
+    </lightning-card>
+</template>

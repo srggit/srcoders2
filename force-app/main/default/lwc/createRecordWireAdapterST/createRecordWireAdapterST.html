@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="createRecord:uiRecordApi Wire Adapter" icon-name="standard:account">
+
+        <div class="slds-m-around_medium">
+            <lightning-input label="Enter Account Name" name="name" type="text" value={name} required
+                onchange={changeHandler}> </lightning-input>
+
+            <lightning-input label="Rating" name="rating" type="text" value={rating}
+                onchange={changeHandler}></lightning-input>
+
+            <lightning-input label="Industry" name="industry" type="text" value={industry}
+                onchange={changeHandler}></lightning-input>
+
+            <lightning-input label="Phone" name="phone" type="text" value={phone}
+                onchange={changeHandler}></lightning-input>
+
+            <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+        </div>
+
+        <!--
+        <div class="slds-m-around_medium">
+            <lightning-input label="Enter Account Name" name="name" type="text" value={formFields.name} required
+                onchange={changeHandler}> </lightning-input>
+
+            <lightning-input label="Rating" name="rating" type="text" value={formFields.rating}
+                onchange={changeHandler}></lightning-input>
+
+            <lightning-input label="Industry" name="industry" type="text" value={formFields.industry}
+                onchange={changeHandler}></lightning-input>
+
+            <lightning-input label="Phone" name="phone" type="text" value={formFields.phone}
+                onchange={changeHandler}></lightning-input>
+
+            <lightning-button label="Save" variant="brand" onclick={createRecord}></lightning-button>
+        </div>
+        -->
+    </lightning-card>
+</template>

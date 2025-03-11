@@ -1,0 +1,56 @@
+<template>
+    <lightning-card title="Lightning Spinner With Message">
+
+        <div class="slds-m-around_medium">
+            <lightning-button label="Show Spinner 1" variant="brand" onclick={spinnerBtnHandler} name="showSpinner1"></lightning-button>
+            <p>Spinner 1</p>
+            <p>Spinner 1</p>
+            <p>Spinner 1</p>
+            <p>Spinner 1</p>
+            <p>Spinner 1</p>
+        </div>
+
+        <!-- Spinner with No data Passed From Parent passed -->
+        <template if:true={showSpinner1}>
+            <c-spinner_with_message_reusable spinner-text="Fetching Data From Server..."></c-spinner_with_message_reusable>
+        </template>
+
+    </lightning-card>
+
+    <lightning-card title="Lightning Spinner With Message">
+
+        <div class="slds-m-around_medium">
+            <lightning-button label="Show Spinner 2" variant="brand" onclick={spinnerBtnHandler} name="showSpinner2"></lightning-button>
+            <p>Spinner 2</p>
+            <p>Spinner 2</p>
+            <p>Spinner 2</p>
+            <p>Spinner 2</p>
+            <p>Spinner 2</p>
+        </div>
+
+        <!-- Spinner with some data passed -->
+        <template if:true={showSpinner2}>
+            <c-spinner_with_message_reusable spinner-text="Data Loading..." size="medium" variant="brand"></c-spinner_with_message_reusable>
+        </template>
+
+    </lightning-card>
+
+
+    <lightning-card title="Lightning Spinner With Message">
+
+        <div class="slds-m-around_medium">
+            <lightning-button label="Show Spinner 3" variant="brand" onclick={spinnerBtnHandler} name="showSpinner3"></lightning-button>
+            <p>Spinner 3</p>
+            <p>Spinner 3</p>
+            <p>Spinner 3</p>
+            <p>Spinner 3</p>
+            <p>Spinner 3</p>
+        </div>
+
+        <!-- Spinner with No data Passed From Parent passed -->
+        <template if:true={showSpinner3}>
+            <c-spinner_with_message_reusable spinner-text="Processing Data..." size="large" variant="inverse"> </c-spinner_with_message_reusable>
+        </template>
+
+    </lightning-card>
+</template>

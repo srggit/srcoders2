@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Imperation Example" icon-name="standard:account">
+        <lightning-input label="Account Name" onchange={accName}></lightning-input>
+
+        <lightning-input label="Account Rating" onchange={accRating}></lightning-input>
+
+        <lightning-input label="Account Industry" onchange={accIndustry}></lightning-input>
+
+        <lightning-input label="Account Phone" onchange={accPhone}> </lightning-input>
+
+        <lightning-input label="Account AnnualRevenue" onchange={accRevenue}></lightning-input>
+
+        <lightning-button label="Create Record" variant="brand" onclick={saveRecord}></lightning-button>
+        
+    </lightning-card>
+</template>

@@ -1,0 +1,60 @@
+<template>
+    Private variable : {privateVar} <br />
+
+    Public variable : {publicVar} <br />
+
+    <br /> <br />
+
+    <lightning-card title="Account Fields">
+        <lightning-record-edit-form object-api-name="Account">
+            <lightning-input-field field-name="Name" onchange={getValue}></lightning-input-field>
+            <lightning-input-field field-name="Rating" onchange={getValue}></lightning-input-field>
+            <lightning-input-field field-name="Industry" onchange={getValue}></lightning-input-field>
+        </lightning-record-edit-form>
+    </lightning-card>
+
+    <!-- Wire as Property -->
+    <template if:true={accountsData.data}>
+        <template for:each={accountsData.data} for:item="acc">
+            <p key={acc.Id}> Name : {acc.Name} </p>
+            <p key={acc.Id}> Rating : {acc.Rating} </p>
+            <p key={acc.Id}> Industry : {acc.Industry} </p>
+        </template>
+    </template>
+
+    <template if:false={accountsData.error}>
+        Problem Displaying Accounts Data {accountsData.error}
+    </template>
+
+    <!-- Wire as Function -->
+    <lightning-datatable columns={columns} data={conMappedData} key-field="Id"></lightning-datatable>
+
+    <br /> <br />
+    <!-- createRecord Imperation -->
+    <lightning-card title="createRecord Imperation">
+        <lightning-input label="Account Name" onchange={getAccData} name="accName"></lightning-input>
+        <lightning-input label="Rating" onchange={getAccData} name="accRating"></lightning-input>
+        <lightning-input label="Industry" onchange={getAccData} name="accIndustry"></lightning-input>
+        <lightning-input label="Ownership" onchange={getAccData} name="accOwnership"></lightning-input>
+
+        <lightning-button label="Save" onclick={saveRecord}></lightning-button>
+        <lightning-button label="Reset" onclick={resetValues}></lightning-button>
+    </lightning-card>
+
+    <br /> <br />
+    <!-- Editable DataTable -->
+    <lightning-card title="Editable DataTable" icon-name="standard:contact">
+        <lightning-input label="Search Here ..." placeholder="Enter Search Text ..."
+            onchange={getContacts}></lightning-input>
+
+        <lightning-datatable columns={contactCols} data={mappedContacts} key-field="Id" onsave={handleSave}
+            draft-values={draftValues}></lightning-datatable>
+    </lightning-card>
+
+
+
+
+
+
+
+</template>

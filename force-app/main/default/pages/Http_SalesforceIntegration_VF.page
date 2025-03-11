@@ -1,0 +1,64 @@
+<apex:page controller="Http_SalesforceIntegration">
+    <apex:form >
+        <apex:pageBlock title="OAuth2 Token Request With UserName Password">
+            <apex:pageBlockButtons location="top">
+                <!-- The rerender attribute ensures the accessToken is displayed after the button is clicked -->
+                <apex:commandButton value="Get Access Token" action="{! requestAccessToken}" rerender="accessTokenBlock" />
+                <apex:commandButton value="Get SObjects Data" action="{! getSObjectsData}" rerender="dataBlock" />
+            </apex:pageBlockButtons>
+
+            <!-- PageBlockSection to display the result -->
+            <apex:pageBlockSection columns="1" id="accessTokenBlock">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Endpoint" />
+                    <apex:outputText value="{! endpoint}" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="UserName" />
+                    <apex:outputText value="{! userName}" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Password" />
+                    <apex:outputText value="{! password}" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Client Id" />
+                    <apex:outputText value="{! clientId}" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Client Secret" />
+                    <apex:outputText value="{! clientSecret }" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Access Token" />
+                    <apex:outputText value="{! accessToken}" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="jsonString From which we fetched Access Toen" />
+                    <apex:outputText value="{! responseJson}" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Instance URL" />
+                    <apex:outputText value="{! instanceUrl}" />
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="1" title="SObjects Data" id="dataBlock">
+                <apex:pageBlockTable value="{! customObjects}" var="sObj">
+                    <apex:column value="{! sObj.name}" headerValue="Name" />
+                    <apex:column value="{! sObj.custom}" headerValue="Object Type" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

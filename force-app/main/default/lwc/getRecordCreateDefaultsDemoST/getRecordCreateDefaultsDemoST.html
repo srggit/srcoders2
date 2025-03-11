@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="getRecordCreateDefault:uiRecordApi Wire Adapter Demo" icon-name="standard:user">
+
+        <table>
+            <thead>
+
+                <tr>
+                    <template for:each={tableHeader} for:item="header">
+                        <th key={header}>{header}</th>
+                    </template>
+                </tr>
+            </thead>
+
+            <tbody>
+                <template for:each={tableData} for:item="data">
+                    <tr key={data.apiName}>
+                        <td>{data.apiName}</td>
+                        <td>{data.dataType}</td>
+                        <td>{data.label}</td>
+                        <td>{data.length}</td>
+                        <td>{data.required}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

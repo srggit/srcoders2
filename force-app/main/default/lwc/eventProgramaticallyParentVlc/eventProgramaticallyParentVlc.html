@@ -1,0 +1,21 @@
+<template>
+    
+    <lightning-card 
+        title="VLC Player - Parent"
+        icon-name="standard:video">
+
+        <div style="margin-left: 20px">
+            <br/>
+            <b> {label} : {bLevel} </b>
+            <br/>
+        </div>
+
+        <!-- Calling the Child Component -->
+        <c-event-programatically-child-vlc>
+
+        </c-event-programatically-child-vlc>
+
+    </lightning-card>
+
+    
+</template>

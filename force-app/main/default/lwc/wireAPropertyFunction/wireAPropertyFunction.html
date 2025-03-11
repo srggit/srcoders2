@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Search Contacts" icon-name="standard:contact">
+
+        <lightning-input label="Enter Search Text" onchange={getSearchText}>
+        </lightning-input>
+
+        ************* WIRE A PROPERTY ************
+        <lightning-datatable key-field="Id"
+                columns={columns1}
+                data={contacts.data}>
+        </lightning-datatable>
+
+        <br/>
+        ************* WIRE A FUNCTION  ************
+        <lightning-datatable key-field="Id"
+                columns={columns2}
+                data={mappedContacts}>
+        </lightning-datatable>
+
+        <!--
+        <template if:true={contacts.data}>
+            <template for:each={contacts.data} for:item="c">
+                <p key={c.Id}> {c.FirstName} {c.LastName}</p>
+            </template>
+        </template>
+
+        <template if:true={contacts.error}>
+            Error While Fetching Data.
+        </template>
+        -->
+    </lightning-card>
+</template>

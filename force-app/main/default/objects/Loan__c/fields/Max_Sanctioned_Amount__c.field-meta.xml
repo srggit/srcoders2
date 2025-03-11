@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Sanctioned_Amount__c</fullName>
+    <formula>IF( ISPICKVAL( Security__c , &apos;Salary&apos;), 
+
+    CASE( Type_Of_Loan__c,
+     &apos;Education&apos;, Customer__r.Salary__c * 24 * 0.80, 
+     &apos;Housing&apos;, Customer__r.Salary__c * 80 * 0.60,
+     &apos;Personal&apos;, Customer__r.Salary__c * 20 * 0.40, 
+     0
+    ),
+
+   Assert_Cost__c * 0.60
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*IF( 
+     ISPICKVAL( Security__c , &apos;Salary&apos;) &amp;&amp;  ISPICKVAL( Type_Of_Loan__c , &apos;Education&apos;),  Customer__r.Salary__c * 24 * 0.80, 
+
+     IF( 
+     ISPICKVAL( Security__c , &apos;Salary&apos;) &amp;&amp;  ISPICKVAL( Type_Of_Loan__c , &apos;Housing&apos;),  Customer__r.Salary__c * 80 * 0.60,
+
+       IF( 
+       ISPICKVAL( Security__c , &apos;Salary&apos;) &amp;&amp;  ISPICKVAL( Type_Of_Loan__c , &apos;Personal&apos;),  Customer__r.Salary__c * 20 * 0.40, 
+      
+         IF( 
+          ISPICKVAL( Security__c , &apos;Assert&apos;),   Assert_Cost__c * 0.60, 0.00
+         )
+       )
+    )
+)
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Max Sanctioned Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

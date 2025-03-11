@@ -1,0 +1,27 @@
+<apex:page controller="Linkedin_Code_Authentication">
+    <apex:form >
+        <apex:pageBlock title="Linkedin Code Request Page">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Request Code" action="{! requestCode}" />
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Client Id" />
+                    <apex:inputText value="{! clientId}" size="100"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="State" />
+                    <apex:inputText value="{! state}" size="100"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="RedirectUrl" />
+                    <apex:outputText value="{! callbackUrl}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

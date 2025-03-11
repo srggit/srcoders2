@@ -1,0 +1,7 @@
+.custom-button-color .slds-input, .custom-button-color .slds-button {
+    border-radius: 25px;
+}
+
+.custom-button-color lightning-radio-group .slds-form-element__control{
+    display: flex;
+}

@@ -1,0 +1,40 @@
+<apex:page controller="DML_Ex3">
+	<apex:form >
+    	<apex:pageBlock title="Account-Contacts">
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{! createRecords}"/>
+            </apex:pageBlockButtons>
+            
+        	<apex:pageBlockSection title="Account" collapsible="true">
+                <apex:inputField value="{! acc.Name}"/>
+                <apex:inputField value="{! acc.Phone}"/>
+                <apex:inputField value="{! acc.Rating}"/>
+                <apex:inputField value="{! acc.Industry}"/>
+            </apex:pageBlockSection>
+            
+            <br/> <br/>
+            <apex:pageBlockTable value="{! conList}" var="c" id="pbt">
+                <apex:column headerValue="Last Name" >
+                    <apex:inputField value="{! c.LastName}"/>
+                </apex:column>
+            	
+                <apex:column headerValue="First Name" >
+                    <apex:inputField value="{! c.FirstName}"/>
+                </apex:column>
+                
+                <apex:column headerValue="Phone" >
+                    <apex:inputField value="{! c.Phone}"/>
+                </apex:column>
+                
+                <apex:column headerValue="Email" >
+                    <apex:inputField value="{! c.Email}"/>
+                </apex:column>
+                
+                <apex:column headerValue="Action" >
+                    <apex:commandButton value="Add" action="{! addContact}" reRender="pbt"/>
+                </apex:column>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
